@@ -1,0 +1,26 @@
+{
+  "name": "tictactoe",
+  "version": "0.0.1",
+  "authors": [
+    "Ron<ronpel88@gmail.com>"
+  ],
+  "description": "tic tac toe game",
+  "main": "app/index.html",
+  "keywords": [
+    "tic, tac, toe, game"
+  ],
+  "license": "MIT",
+  "homepage": "somedomain.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "latest",
+    "angular": "~1.2.18"
+  }
+}

@@ -1,0 +1,37 @@
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: tictactoe
+
+ @author: Ron
+ @www: somedomain.com
+
+ @copyright: COPYRIGHT 29 Ron
+ @license: MIT
+
+ =============================================================================
+ Filename: main.css
+ =============================================================================
+ This file is responsible for all styles on the tictactoe app.
+ --------------------------------------------------------------------------------------------------------------------- */
+
+body{
+    background-color: #82E28A;
+}
+
+table{
+    background: whitesmoke;
+    border: 2px solid #ddd!important;
+}
+
+td{
+    border: 2px solid #ddd;
+    padding: 20px!important;
+    text-align: center;
+}
+
+.player1Color{
+    background-color: #ff0000;
+}
+
+.player2Color{
+    background-color: #0000ff;
+}

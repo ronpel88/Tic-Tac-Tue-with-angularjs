@@ -1,0 +1,78 @@
+<!doctype html>
+
+<html ng-app>
+	<head>
+		<meta charset = "utf-8">
+		<meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+		<title>tictactoe</title>
+		<meta name = "description" content = "tic tac toe game">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1">
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<!-- build:css styles/vendor.css -->
+		<!-- bower:css -->
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+		<!-- endbower -->
+        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+		<link rel="stylesheet" href="styles/main.css">
+		<!-- endbuild -->
+	</head>
+	<body>
+		<!--[if lt IE 10]>
+		<p class = "browsehappy">You are using an <strong>outdated</strong> browser. Please
+			<a href = "http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+
+		<div class = "container" ng-controller="gameCtrl">
+			<main role = "main">
+				<header>
+					<h1>Tic-Tac-Toe Game <small>with AngularJS</small></h1>
+				</header>
+
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td ng-class="{player1Color:player.symbol==='X', player2Color:player.symbol==='0'}" ng-repeat="player in allPlayers">
+                                {{player.name}} ({{player.symbol}})
+                            </td>
+                        </tr>
+                        <tr>
+                            <td ng-repeat="player in allPlayers">
+                                {{player.score}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <article>
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr ng-repeat="row in board">
+                                <td ng-class="{player1Color:cell.isX(), player2Color:cell.isO()}" ng-click="fillCell(getActivePlayer(), cell)" ng-repeat="cell in row">
+                                    <i class="fa fa-times" ng-show="cell.isX()"></i>
+                                    <i class="fa fa-circle-o" ng-show="cell.isO()"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <h3>{{getActivePlayer().name}} ({{getActivePlayer().symbol}}), is your turn now</h3>
+                    </table>
+                </article>
+			</main>
+            <div class="row" ng-show="showError"><h3>Please try again</h3></div>
+            <div class="row" ng-show="showTie"><h3>Its a tie!</h3></div>
+            <div class="row" ng-show="showWinner"><h3>{{winnerPlayer.name}} bravo, you won!!!</h3></div>
+            <div class="row"><a ng-click="initNewBoard()">To start a new game, PRESS HERE</a></div>
+		</div>
+
+		<!-- build:js scripts/vendor.js -->
+		<!-- bower:js -->
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="bower_components/angular/angular.js"></script>
+		<!-- endbower -->
+        <script src="scripts/app.js"></script>
+		<!-- endbuild -->
+		<!-- TODO: Google Analytics -->
+	</body>
+</html>
