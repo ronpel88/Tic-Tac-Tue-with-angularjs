@@ -2,8 +2,12 @@
 
 To run just do:
 
-'''sh
+```sh
 npm install
 bower install
-grunt serve
-'''
+grunt serve 
+```
+
+
+Have a fun game.
+Ron
